@@ -1,5 +1,7 @@
 -module(rstats).
 
+-compile({no_auto_import, [floor/1]}).
+
 -export([
     seed/0,
     rpois/1,
