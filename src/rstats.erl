@@ -546,8 +546,8 @@ build_vectors([J | Short], [K | Long], Inx, Prob) ->
 
 
 walker_choice({walker_vectors, N, Keys, Inx, Prob}) ->
-    J = crypto:rand_uniform(0, N),
-    U = crypto:rand_uniform(0, 100) / 100,
+    J = rand:uniform(N),
+    U = rand:uniform(100) / 100,
     Idx = case U =< array:get(J, Prob) of
               true -> J;
               false -> array:get(J, Inx)
